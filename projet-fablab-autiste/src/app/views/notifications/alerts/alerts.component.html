@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Affichage de la carte ThingSpeak</title>
+  <style>
+    #map {
+      height: 400px;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <h1>Carte ThingSpeak</h1>
+  <div id="map"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.js"></script>
+  <script>
+    // Récupération des données ThingSpeak
+    fetch('https://api.thingspeak.com/channels/YUHQ5JJL8Q2XBEU8/feeds.json?results=10')
+    console.log(data)
+  .then(response => response.json())
+  .then(data => {
+    // Création de la carte
+    var map = L.map('map').setView([data.channel.latitude, data.channel.longitude], 12);
+
+    // Ajout des tuiles de la carte (par exemple, OpenStreetMap)
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: 'Map data &copy; OpenStreetMap contributors',
+      maxZoom: 18
+    }).addTo(map);
+
+    // Ajout des marqueurs à partir des données ThingSpeak
+    data.feeds.forEach(feed => {
+      if (feed.latitude && feed.longitude) {
+        var marker = L.marker([parseFloat(feed.latitude), parseFloat(feed.longitude)]).addTo(map);
+        marker.bindPopup('Valeur : ' + feed.field1);
+      }
+    });
+  });
+  </script>
+</body>
+</html>

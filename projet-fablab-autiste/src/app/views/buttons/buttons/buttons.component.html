@@ -1,0 +1,33 @@
+
+<div id="services">
+    <div class="service">
+      <a href="https://deux-minutes-pour.org/video/proposer-des-jeux-sociaux-et-sensoriels/">Posts</a>
+      <p class="service-description">Voir les derniers messages</p>
+    </div>
+
+<script>
+ async function fetchLatestPosts() {
+      const response = await fetch('https://deux-minutes-pour.org/video/proposer-des-jeux-sociaux-et-sensoriels/');
+      const data = await response.json();
+      return data;
+    }
+    function renderLatestPosts(posts) {
+      const postsElement = document.getElementById('posts');
+      postsElement.innerHTML = '';
+      posts.forEach(post => {
+        const postElement = renderPost(post);
+        postsElement.appendChild(postElement);
+      });
+    }
+    // Fonction pour récupérer et afficher périodiquement les derniers messages
+    function updatePosts() {
+      fetchLatestPosts()
+        .then(posts => renderLatestPosts(posts))
+        .catch(error => console.error(error));
+        updatePosts();
+
+    }
+
+
+
+</script>

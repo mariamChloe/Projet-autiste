@@ -1,0 +1,55 @@
+<div class="min-vh-100 d-flex flex-row align-items-center site-container ;">
+    <c-container>
+      <c-row class="justify-content-center">
+        <c-col xl="8">
+          <c-card class="p-4">
+            <c-card-body class="text-center login-container">
+            <c-row>
+              <c-col class="test-right justify-content-end">
+                <img src="/assets/img/avatars/Fab_Lab_1.png" alt="logo-fablab" style="text-align: left; width: 60px;">
+              </c-col>
+              <c-col class="text-left"> 
+                <img src="/assets/img/avatars/orange logo.png" alt="logo-orange" style="text-align: left; width: 100px;">
+              </c-col>
+             </c-row>
+              <form cForm>
+                <c-row>
+                  <c-col xs="8">
+                    <h6 class="text-left">Bienvenue sur la page de connexion</h6>
+                    <p class="text-medium-emphasis">Connectez-vous à votre compte</p>
+                    <c-input-group class="mb-3" style="width: 50%;">
+                      <span cInputGroupText>
+                        <svg cIcon name="cilUser"></svg>
+                      </span>
+                      <input autoComplete="username" cFormControl placeholder="Username" />
+                    </c-input-group>
+                    <c-input-group class="mb-5" style="width: 50%;">
+                      <span cInputGroupText>
+                        <svg cIcon name="cilLockLocked"></svg>
+                      </span>
+                      <input autoComplete="current-password" cFormControl placeholder="Password" type="password" />
+                    </c-input-group>
+                    <c-row>
+                      <c-col xs="6">
+                        <button cButton class="px-4" color="primary" [active]="true" routerLink="/dashboard-parent">
+                          connexion
+                        </button>
+                      </c-col>
+                      <c-col class="text-right" xs="6">
+                        <button cButton class="px-0" color="link">
+                          Forgot password?
+                        </button>
+                      </c-col>
+                    </c-row>
+                  </c-col>
+                  <c-col xl="4" class="d-flex align-items-center justify-content-end">                    
+                  </c-col>
+                </c-row>
+              </form>
+            </c-card-body>
+          </c-card>
+        </c-col>
+      </c-row>
+    </c-container>
+  </div>
+  

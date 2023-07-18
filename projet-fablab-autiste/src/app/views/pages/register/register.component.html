@@ -1,0 +1,92 @@
+<div class="bg-light min-vh-100 d-flex flex-row align-items-center form-container">
+  <c-container>
+    <c-row class="justify-content-center site-container">
+      <c-col lg="7" md="9" xl="6" >
+        <c-card class="mx-4">
+          <c-card-body class="p-4" color="#">
+            <form cForm>
+              <h4>Enregistrement Enfant</h4>
+              <p class="text-medium-emphasis"></p>
+              <c-input-group class="mb-3">
+                <span cInputGroupText>
+                  <svg cIcon name="cilUser"></svg>
+                </span>
+                <input autoComplete="name" cFormControl placeholder="Nom" />
+              </c-input-group>
+              <c-input-group class="mb-3">
+                <span cInputGroupText>
+                  <svg cIcon name="cilUser"></svg>
+                </span>
+                <input autoComplete="name" cFormControl placeholder="Prenom" />
+              </c-input-group>
+              <c-input-group class="mb-3">
+                <span cInputGroupText>
+                  <svg cIcon name="cilPhone"></svg>
+                </span>
+                <input autoComplete="name" cFormControl placeholder="Contact" />
+              </c-input-group>
+              <c-input-group class="mb-3">
+                <span cInputGroupText>@</span>
+                <input autoComplete="email" cFormControl placeholder="Email" required />
+              </c-input-group>
+              <c-input-group class="mb-3">
+                <span cInputGroupText>
+                  <svg cIcon name="cilChild"></svg>
+                </span>
+                <input autoComplete="name" cFormControl placeholder="Nom de l'Enfant" />
+              </c-input-group>
+              <c-input-group class="mb-3">
+                <span cInputGroupText>
+                  <svg cIcon name="cilChild"></svg>
+                </span>
+                <input autoComplete="name" cFormControl placeholder="Prenom de l'Enfant" />
+              </c-input-group>
+              <div class="input-group mb-3">
+              <select aria-label="Large select example" cSelect class="mb-3" sizing="md">
+                <option>Sexe
+                  <span class="input-group-text">
+                    <svg cIcon name="cilCalendar"></svg>
+                  </span>
+                </option>
+                <option value="1">F</option>
+                <option value="2">M</option>
+              </select >
+              </div>
+              <div class="input-group mb-3">
+                <span class="input-group-text">
+                  <svg cIcon name="cilCalendar"></svg>
+                </span>
+                <div class="input-group-prepend"> 
+                </div>
+                <input
+                  ngbDatepicker
+                  #datePicker="ngbDatepicker"
+                  class="form-control"
+                  placeholder="Date de Naissance"
+                  [readonly]="true"
+                  (focus)="datePicker.toggle()"
+                />
+              </div>
+              
+              <c-input-group class="mb-3">
+                <span cInputGroupText>
+                  <svg cIcon name="cilLockLocked"></svg>
+                </span>
+                <input autoComplete="Noveau-Mot-de-passe" cFormControl placeholder="Mot-de-passe" type="Mot-De-Passe" />
+              </c-input-group>
+              <c-input-group class="mb-4">
+                <span cInputGroupText>
+                  <svg cIcon name="cilLockLocked"></svg>
+                </span>
+                <input autoComplete="Noveau-Mot-de-passe" cFormControl placeholder="Repeter-Mot-de-Passe" type="Mot-De-Passe" />
+              </c-input-group>
+              <div class="d-grid">
+                <button cButton color="primary" [active]="true" routerLink="/login-parent" >Create Account</button>
+              </div>
+            </form>
+          </c-card-body>
+        </c-card>
+      </c-col>
+    </c-row>
+  </c-container>
+</div>

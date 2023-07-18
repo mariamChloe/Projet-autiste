@@ -1,0 +1,78 @@
+
+
+<!--sidebar-->
+<c-sidebar
+  #sidebar="cSidebar"
+  class="d-print-none sidebar sidebar-fixed"
+  id="sidebar"
+  visible
+>
+
+  <c-sidebar-brand
+    
+    routerLink="./"
+  />
+  <c-col class="text-dark">
+    <img src="/assets/img/avatars/LOGO fAB BLANC.png" alt="logo-fablab" style="text-align:center; width: 40px;">
+  </c-col>
+  <ng-scrollbar pointerEventsMethod="scrollbar">
+    <c-sidebar-nav
+      [navItems]="navItems"
+      dropdownMode="close"
+      class="sidebar"
+    />
+
+    
+  </ng-scrollbar>
+  <c-sidebar-toggler
+    *ngIf="!sidebar.narrow"
+    toggle="unfoldable"
+    cSidebarToggle="sidebar"
+  />
+</c-sidebar>
+
+<!--main-->
+
+<div class="wrapper d-flex flex-column min-vh-100 bg-light dark:bg-transparent">
+  <!--app-header-->
+  <app-default-header class="mb-4 d-print-none header header-sticky" position="sticky" sidebarId="sidebar" />
+  <!--app-body-->
+  <div class="container text-center">
+    <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+      <div class="col">
+        <div class="p-4 border bg-white">  <svg cIcon name="cilChart"></svg>Temperature
+          <p class="paragraph-padding"><svg cIcon name="cilChartLine"></svg> 30°</p>
+        
+        </div>
+      </div>
+      <div class="col">
+        <div class="p-4 border bg-white">  <svg cIcon name="cilChart"></svg>Frequence Cardiaque
+          <p class="paragraph-padding"><svg cIcon name="cilChartLine"></svg> 30°</p>
+        
+        </div>
+      </div>
+      <div class="col">
+        <div class="p-4 border bg-white">  <svg cIcon name="cilChart"></svg>Frequence Respiratoire
+          <p class="paragraph-padding"><svg cIcon name="cilChartLine"></svg> 30°</p>
+        
+        </div>
+      </div>
+      <div class="col">
+        <img src="/assets/img/avatars/Enfant.jpg" alt="enfant" style="text-align: left; width: 500px;">
+      </div>
+    </div>
+  </div>
+  
+  <div class="body flex-grow-1 px-3">
+    <c-container breakpoint="lg" class="h-auto">
+      <router-outlet/>
+    </c-container>
+  </div>
+  <!--app footer-->
+  <app-default-footer/>
+</div>
+<script>
+  
+</script>
+
+  

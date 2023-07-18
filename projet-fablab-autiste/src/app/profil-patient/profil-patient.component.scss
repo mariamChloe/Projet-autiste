@@ -1,0 +1,45 @@
+.profil-container{
+    border-radius : 20px solid;
+    height: 100vh; /* Définit la hauteur du conteneur comme 100% de la hauteur de la fenêtre */
+  display: flex; /* Utilise un modèle de boîte flexible pour aligner les éléments */
+}
+.img-thumbnail{
+    width: 100px; /* Définissez la largeur souhaitée */
+    height: auto; /* Maintenez la hauteur proportionnelle */
+    border-radius: 40px;
+    justify-content: center;
+}
+.card{
+    background-color:#E9F2FF;
+}
+:host {
+    ng-scrollbar {
+      --scrollbar-thumb-color: var(--cui-border-color, #0800f0);
+      --scrollbar-track-color: var(--cui-body-color, #002e89);
+      --scrollbar-hover-size: calc(var(--scrollbar-size) * 1.5);
+    }
+  }
+  
+  .sidebar {
+    $my-sidebar-color: #0756c6; // couleur de ma barre laterale
+    background-color: $my-sidebar-color;
+    background:cover;
+    
+  }
+  #sidebar {
+    
+   
+    background-color: #1a64cb; // Replace #ff0000 with your desired color value
+    }
+    .p-4{
+      height: 200px; /* Modifiez la taille de la police selon vos préférences */
+
+
+    }
+    .paragraph-padding {
+      padding: 30px; /* Modifiez le padding selon vos préférences */
+    }
+  
+  
+  
+  
